@@ -11,13 +11,14 @@ import {
     
 } from "react-icons/hi2";
 import { Link } from "react-router-dom"
-const ProductRow = () => {
+import { ProductType } from "./ProductList";
+const ProductRow = ({product}:ProductType) => {
   return (
     <TableRow >
-                        <TableCell >1</TableCell>
-                        <TableCell>M2 macbook</TableCell>
-                        <TableCell>4000</TableCell>
-                        <TableCell>23bfffsf</TableCell>
+                        <TableCell >{product.id}</TableCell>
+                        <TableCell>{product.product_name}</TableCell>
+                        <TableCell>{product.price}</TableCell>
+                        <TableCell>{product.created_at}</TableCell>
                         <TableCell className="text-right">
                             <div className="inline-flex items-center justify-end">
                             <Link

@@ -2,9 +2,10 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "./components/Layout";
 import NotFoundPage from "./pages/NotFoundPage";
 import DashboardPage from "./pages/DashboardPage";
-import Salepage from "./pages/SalePage";
+import SalePage from "./pages/SalePage";
 import VoucherPage from "./pages/VoucherPage";
 import ProductPage from "./pages/ProductPage";
+import CreateProductPage from "./pages/CreateProductPage";
 
 const router = createBrowserRouter([
     {path: "/",
@@ -21,8 +22,12 @@ const router = createBrowserRouter([
             element: <ProductPage/>
         },
         {
+            path: '/product/create',
+            element: <CreateProductPage/>
+        },
+        {
             path: "/sale",
-            element: <Salepage/>
+            element: <SalePage/>
         },{
             path: '/voucher',
             element: <VoucherPage/>
