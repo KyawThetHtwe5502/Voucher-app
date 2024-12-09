@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "product_name": "Custom Website Design",
+      "price": "20",
+      "created_at": "2024-12-09T05:31:15.620Z",
+      "id": "2"
+    },
+    {
+      "product_name": "Custom Website Design",
+      "price": "300",
+      "created_at": "2024-12-09T05:25:31.172Z",
+      "id": "3"
+    },
+    {
+      "product_name": "Custom Website Design",
+      "price": "30",
+      "created_at": "2024-12-09T05:31:25.780Z",
+      "id": "a47e"
+    }
+  ]
+}

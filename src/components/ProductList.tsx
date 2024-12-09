@@ -8,27 +8,35 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
-import { Button } from "@/components/ui/button"
 import {
-    HiMiniTrash,
-    HiOutlinePencil,
-    HiOutlineTrash,
-    HiPlus,
-    HiTrash,
+    HiPlus
 } from "react-icons/hi2";
 
+import { Button } from "@/components/ui/button"
+
 import useSWR from "swr";
-import { Divide } from "lucide-react";
+
 import ProductRow from "./ProductRow";
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+import { Link } from "react-router-dom";
+
+export type Product = {
+    id: number;
+    product_name : string;
+    created_at: string;
+    price: number;
+}
+const fetcher = (url: string):Promise<Product[]> => fetch(url).then((res) => res.json());
 
 const ProductList = () => {
-    const { data, isLoading } = useSWR(import.meta.env.VITE_API_URL + '/products', fetcher);
-
+    const { data,  isLoading } = useSWR<Product[]>('http://localhost:5000/products', fetcher);
+    console.log();
     return (
         <div>
             <div>
-                <Button variant="secondary">Secondary</Button>
+                <Link to="/product/create">
+                <Button className="bg-blue-600 ">Add new Product  <HiPlus />
+                </Button>
+                </Link>
             </div>
             <Table className="w-[1000px]">
                 <TableCaption>A list of your recent invoices.</TableCaption>
@@ -43,8 +51,8 @@ const ProductList = () => {
                 </TableHeader>
                 <TableBody>
 
-                    {isLoading ?  <div>loading</div> : data.length === 0 ? (<div>dfdf</div>) : (
-                        data.map((product) => <ProductRow product={product} /> )
+                    {isLoading ?  <div>loading</div> : data?.length === 0 ? (<div>dfdf</div>) : (
+                        data?.map((product) => <ProductRow key={product.id} product={product} /> )
                     )}
 
                 </TableBody>
