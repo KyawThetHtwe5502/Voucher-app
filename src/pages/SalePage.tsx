@@ -1,7 +1,10 @@
+import SaleForm from "@/components/SaleForm"
 
 const SalePage = () => {
   return (
-    <div>SalePage</div>
+    <div>
+      <SaleForm/>
+    </div>
   )
 }
 

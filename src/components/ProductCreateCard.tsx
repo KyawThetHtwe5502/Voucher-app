@@ -30,7 +30,7 @@ const ProductCreateCard = () => {
         necessitatibus quos earum itaque.
       </p>
       <form onSubmit={handleSubmit(handleCreateProduct)}>
-        <div>
+        <div className="mb-4">
             <label htmlFor="product_name"  className={`block mb-2 text-sm font-medium ${
               errors.product_name ? "text-red-500" : "text-gray-900"
             } dark:text-white`}>New Product Name</label>
@@ -56,7 +56,7 @@ const ProductCreateCard = () => {
               Product name must be less then 30 characters
             </p>) }
         </div>
-        <div>
+        <div className="mb-4">
             <label htmlFor="price"  className={`block mb-2 text-sm font-medium ${
               errors.price ? "text-red-500" : "text-gray-900"
             } dark:text-white`}
@@ -81,11 +81,11 @@ const ProductCreateCard = () => {
               Price must be less then 1000
             </p>) }
         </div>
-        <div>
+        <div className="mb-4">
             <input {...register("all_correct")} required id="all_correct" type="checkbox" />
             <label htmlFor="all_correct">Make sure all field are correct</label>
         </div>
-        <div>
+        <div className="mb-4">
             <input {...register("back_to_product_list")} required id="back_to_product_list" type="checkbox" />
             <label htmlFor="back_to_product_list">Back to Product List</label>
         </div>

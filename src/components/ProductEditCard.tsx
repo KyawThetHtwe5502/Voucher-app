@@ -36,7 +36,7 @@ const ProductEditCard = () => {
         necessitatibus quos earum itaque.
       </p>
       <form onSubmit={handleSubmit(handleEditProduct)}>
-        <div>
+        <div className="mb-4">
             <label htmlFor="product_name" className={`block mb-2 text-sm font-medium ${
               errors.product_name ? "text-red-500" : "text-gray-900"
             } dark:text-white`}>New Product Name</label>
@@ -44,7 +44,11 @@ const ProductEditCard = () => {
               required: true,
               minLength: 3,
               maxLength: 30
-            })} id="product_name" type="text" defaultValue={data?.product_name} />
+            })} id="product_name" type="text" defaultValue={data?.product_name} className={`bg-gray-50 border ${
+              errors.product_name
+                ? "border-red-500 focus:ring-red-500 focus:border-red-500"
+                : "border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+            } text-gray-900 text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`} />
             {errors.product_name?.type === "required" && (<p className="text-red-500 mt-1 text-sm">
               Product name is required
             </p> )}
@@ -55,7 +59,7 @@ const ProductEditCard = () => {
               Product name must be less then 30 characters
             </p>) }
         </div>
-        <div>
+        <div className="mb-4">
             <label htmlFor="price" className={`block mb-2 text-sm font-medium ${
               errors.price ? "text-red-500" : "text-gray-900"
             } dark:text-white`}>Product Price</label>
@@ -66,8 +70,7 @@ const ProductEditCard = () => {
                 errors.price
                   ? "border-red-500 focus:ring-red-500 focus:border-red-500"
                   : "border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-              } text-gray-900 text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`}
-              placeholder="eg. apple" />
+              } text-gray-900 text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`} />
             {errors.price?.type === "required" && (<p className="text-red-500 mt-1 text-sm">
               Price is required
             </p> )}
@@ -78,11 +81,7 @@ const ProductEditCard = () => {
               Price must be less then 1000
             </p>) }
         </div>
-        <div>
-            <input {...register("all_correct")} id="all_correct" required type="checkbox"  />
-            <label htmlFor="all_correct">Make sure all field are correct</label>
-        </div>
-        <div>
+        <div className="mb-4">
             <input {...register("back_to_product_list")} id="back_to_product_list" type="checkbox" required checked />
             <label htmlFor="back_to_product_list">Back to Product List</label>
         </div>

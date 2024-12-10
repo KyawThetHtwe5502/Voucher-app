@@ -11,13 +11,20 @@ import {
     
 } from "react-icons/hi2";
 import { Link } from "react-router-dom"
-import { Product } from "./ProductList";
+
 import { useSWRConfig } from "swr";
 import ShowDate from "./ShowDate";
 // import useSWR from "swr";
 
-
-const ProductRow = ({product}:Product) => {
+interface props {
+    product: {
+        id: number;
+    product_name : string;
+    created_at: string;
+    price: number;
+    }
+}
+const ProductRow = ({product}:props) => {
     const { mutate } = useSWRConfig();
 
     const handleDeleteBtn = async () => {
