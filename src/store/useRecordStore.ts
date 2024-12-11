@@ -9,9 +9,10 @@ interface Record {
   }
   
 type store = {
-    records: Record[],
-    addRecord: (record: Record) => void,
-    changeQuantity:(id:number,quantity: number) => void
+    records: Record[];
+    addRecord: (record: Record) => void;
+    changeQuantity:(id:number,quantity: number) => void;
+    resetRecord: () => void;
 }
 export const useRecordStore = create<store>(
     (set) => ({
@@ -28,5 +29,6 @@ export const useRecordStore = create<store>(
                     return record;
                 }
             })
-        }))
+        })),
+        resetRecord: () => set({records: []})
     }))

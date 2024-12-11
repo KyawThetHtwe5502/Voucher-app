@@ -12,7 +12,8 @@ const SaleForm = () => {
     const { register, handleSubmit ,reset } = useForm()
     const { data } = useSWR<Product[]>('http://localhost:5000/products', fetcher);
     const {records, addRecord, changeQuantity} = useRecordStore()
-    const onSubmit = (data:any)=> {
+    const onSubmit = (data:any) => {
+        
         const currentProduct = JSON.parse(data.product)
         const currentId = currentProduct.id;
         console.log(currentId)
@@ -28,12 +29,12 @@ const SaleForm = () => {
                 cost: data.quantity * currentProduct.price
                })
         }
-        console.log(typeof data.quantity)
+        
       reset()
     }
     console.log(records)
     return (
-        <div>
+        
             <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-3 gap-3">
                 <div className="col-span-1">
                     <label
@@ -42,8 +43,8 @@ const SaleForm = () => {
                     >
                         Select Your Product
                     </label>
-                    <select {...register("product")} id="">
-                        <option value="">select your product</option>
+                    <select {...register("product")}>
+                        <option >select your product</option>
                         {data && data.map((product) => <option key={product.id} value={JSON.stringify(product)} >
                             {product.product_name}
                         </option>)}
@@ -60,7 +61,7 @@ const SaleForm = () => {
                 </div>
                 <Button type="submit" className="col-span-1  bg-blue-500 w-full h-full">Add Product </Button>
             </form>
-        </div>
+        
     )
 }
 
