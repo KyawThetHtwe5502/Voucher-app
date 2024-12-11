@@ -45,7 +45,10 @@ const VoucherInfo = () => {
                     })} />
                 </div>
             </div>
+            <div>
+
             <SaleForm/>
+            </div>
             <div>
                     <label htmlFor=""> Make sure all field are correct
                     </label>
