@@ -1,9 +1,10 @@
-import SaleForm from "@/components/SaleForm"
+import VoucherInfo from "@/components/VoucherInfo"
+
 
 const SalePage = () => {
   return (
     <div>
-      <SaleForm/>
+      <VoucherInfo/>
     </div>
   )
 }

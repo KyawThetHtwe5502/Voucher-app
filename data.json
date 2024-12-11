@@ -18,5 +18,25 @@
       "created_at": "2024-12-10T07:14:38.906Z",
       "id": "a47e"
     }
+  ],
+  "vouchers": [
+    {
+      "id": "d174",
+      "voucher_id": "dfdfdff",
+      "customer_name": "dffff",
+      "customer_email": "affff@gmail.com",
+      "sale_date": "2024-12-10",
+      "all_correct": true,
+      "records": []
+    },
+    {
+      "id": "0c44",
+      "voucher_id": "dfdfdff",
+      "customer_name": "dffff",
+      "customer_email": "affff@gmail.com",
+      "sale_date": "2024-12-10",
+      "all_correct": true,
+      "records": []
+    }
   ]
 }
