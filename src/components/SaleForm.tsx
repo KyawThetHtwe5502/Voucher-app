@@ -9,7 +9,7 @@ import { useRecordStore } from "@/store/useRecordStore";
 const fetcher = (url: string): Promise<Product[]> => fetch(url).then((res) => res.json());
 
 const SaleForm = () => {
-    const { register, handleSubmit ,reset } = useForm()
+    const { register, handleSubmit ,reset, formState: {errors} } = useForm()
     const { data } = useSWR<Product[]>('http://localhost:5000/products', fetcher);
     const {records, addRecord, changeQuantity} = useRecordStore()
     const onSubmit = (data:any) => {
@@ -34,8 +34,8 @@ const SaleForm = () => {
     }
     console.log(records)
     return (
-        
-            <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-3 gap-3">
+        <div className="p-5 rounded-lg border mb-5">
+             <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-3 gap-3">
                 <div className="col-span-1">
                     <label
                         htmlFor="productSelect"
@@ -43,7 +43,8 @@ const SaleForm = () => {
                     >
                         Select Your Product
                     </label>
-                    <select {...register("product")}>
+                    <select {...register("product")} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required
+                    >
                         <option >select your product</option>
                         {data && data.map((product) => <option key={product.id} value={JSON.stringify(product)} >
                             {product.product_name}
@@ -57,11 +58,16 @@ const SaleForm = () => {
                     >
                         Quantity
                     </label>
-                    <Input type="number" {...register("quantity")} required />
+                    <Input type="number" {...register("quantity")} defaultValue={1} required className={`bg-gray-50 border ${
+              errors.quantity
+                ? "border-red-500 focus:ring-red-500 focus:border-red-500"
+                : "border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+            } text-gray-900 text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`}
+            />
                 </div>
                 <Button type="submit" className="col-span-1  bg-blue-500 w-full h-full">Add Product </Button>
             </form>
-        
+        </div>
     )
 }
 

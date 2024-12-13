@@ -172,6 +172,41 @@
       "tax": 50.400000000000006,
       "netTotal": 770.4,
       "id": "hPMldzn"
+    },
+    {
+      "id": "fbc3",
+      "voucher_id": "INV-20241213-8758",
+      "customer_name": "Mg Mg Lwin",
+      "customer_email": "mml@gmail.com",
+      "sale_date": "2024-12-13",
+      "all_correct": true,
+      "records": [
+        {
+          "id": 1734102815210,
+          "product": {
+            "product_name": "Custom Website Design",
+            "price": "300",
+            "created_at": "2024-12-09T05:25:31.172Z",
+            "id": "3"
+          },
+          "quantity": 4,
+          "cost": 1200
+        },
+        {
+          "id": 1734102824178,
+          "product": {
+            "product_name": "Custom Website Design",
+            "price": "20",
+            "created_at": "2024-12-09T05:31:15.620Z",
+            "id": "2"
+          },
+          "quantity": 2,
+          "cost": 40
+        }
+      ],
+      "total": 1240,
+      "tax": 86.80000000000001,
+      "netTotal": 1326.8
     }
   ]
 }

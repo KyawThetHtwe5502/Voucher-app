@@ -7,6 +7,7 @@ import VoucherPage from "./pages/VoucherPage";
 import ProductPage from "./pages/ProductPage";
 import CreateProductPage from "./pages/CreateProductPage";
 import ProductEditPage from "./pages/ProductEditPage";
+import VoucherDetailPage from "./pages/VoucherDetailPage";
 
 const router = createBrowserRouter([
     {path: "/",
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
         },{
             path: '/voucher',
             element: <VoucherPage/>
+        },
+        {
+            path: '/voucher/detail/:id',
+            element: <VoucherDetailPage/>
         }
     ]
     }
