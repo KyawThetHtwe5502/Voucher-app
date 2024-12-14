@@ -1,7 +1,10 @@
+import VoucherList from "@/components/VoucherList"
 
 const VoucherPage = () => {
   return (
-    <div>VoucherPage</div>
+    <div>
+      <VoucherList/>
+    </div>
   )
 }
 

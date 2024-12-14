@@ -1,9 +1,6 @@
 import {
     Table,
     TableBody,
-    TableCaption,
-    TableCell,
-    TableFooter,
     TableHead,
     TableHeader,
     TableRow,
@@ -38,8 +35,7 @@ const ProductList = () => {
                 </Button>
                 </Link>
             </div>
-            <Table className="w-[1000px]">
-                <TableCaption>A list of your recent invoices.</TableCaption>
+            <Table>
                 <TableHeader>
                     <TableRow>
                         <TableHead >#</TableHead>
@@ -56,12 +52,6 @@ const ProductList = () => {
                     )}
 
                 </TableBody>
-                <TableFooter>
-                    <TableRow>
-                        <TableCell colSpan={3}>Total</TableCell>
-                        <TableCell className="text-right">$2,500.00</TableCell>
-                    </TableRow>
-                </TableFooter>
             </Table>
         </div>
     )

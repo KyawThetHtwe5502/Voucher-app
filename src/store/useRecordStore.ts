@@ -1,7 +1,7 @@
 import { Product } from "@/components/ProductList";
 import { create } from "zustand";
 
-interface Record {
+ export interface Record {
     id: number;
     product: Product;
     quantity: number;
