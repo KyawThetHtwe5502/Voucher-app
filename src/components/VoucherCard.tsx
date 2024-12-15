@@ -1,3 +1,4 @@
+import html2pdf from "html2pdf.js";
 import {
   Table,
   TableBody,
@@ -9,15 +10,48 @@ import {
 } from "@/components/ui/table";
 import { useParams } from "react-router-dom";
 import { VoucherType } from "./VoucherList";
+import printJS from "print-js";
+
 import useSWR from "swr";
+import { Button } from "./ui/button";
 
 const fetcher = (url: string): Promise<VoucherType> =>
   fetch(url).then((res) => res.json());
 const VoucherCard = () => {
   const { id } = useParams();
   const { data } = useSWR(`http://localhost:5000/vouchers/${id}`, fetcher);
+  const handlePrint= () => {
+    printJS({
+      printable: "printArea",
+      type: "html",
+      //   header: "INVOICE",
+      scanStyles: true,
+      css: [
+        "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css",
+      ],
+    })
+  }
+
+  const handlePdf = () => {
+        const element = document.getElementById("printArea");
+
+    // Options for PDF generation
+    const opt = {
+      margin: 0.1,
+      filename: "invoice.pdf",
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 1 },
+      jsPDF: { unit: 'in', format: 'a5', orientation: 'portrait' },
+    };
+
+    // Convert the element to PDF
+    html2pdf().from(element).set(opt).save();
+
+  }
   return (
-    <div>
+    <div className="flex gap-5">
+      <div id="printArea" className="w-[14.8cm] bg-white" >
+        <div >
         <div className="flex justify-between items-start mb-8">
           <div>
             <h1 className="text-4xl font-bold mb-2">INVOICE</h1>
@@ -86,6 +120,12 @@ const VoucherCard = () => {
           <p className="mt-4 text-center text-sm">Thanks to You</p>
         </div>
       </div>
+    </div>
+      </div>
+    <div className="flex flex-col gap-5">
+      <Button onClick={handlePrint} className="bg-blue-500">Print Voucher</Button>
+      <Button onClick={handlePdf} className="bg-blue-500">Download PDF</Button>
+    </div>
     </div>
   );
 };
