@@ -8,8 +8,8 @@
     },
     {
       "product_name": "Custom Website Design",
-      "price": "300",
-      "created_at": "2024-12-22T04:37:58.784Z",
+      "price": "30",
+      "created_at": "2024-12-22T11:44:32.025Z",
       "id": "3"
     }
   ],
@@ -118,6 +118,142 @@
       "total": 1240,
       "tax": 86.80000000000001,
       "netTotal": 1326.8
+    },
+    {
+      "voucher_id": "INV-20241222-2667",
+      "customer_name": "Kyaw Thet Htwe",
+      "customer_email": "kyawthethtwe5502@gmail.com",
+      "sale_date": "2024-12-22",
+      "redirect_to_detail": true,
+      "all_correct": true,
+      "records": [
+        {
+          "id": 1734867896265,
+          "product": {
+            "product_name": "Custom Website Design",
+            "price": "20",
+            "created_at": "2024-12-09T05:31:15.620Z",
+            "id": "2"
+          },
+          "quantity": 1,
+          "cost": 20
+        }
+      ],
+      "total": 20,
+      "tax": 1.4000000000000001,
+      "netTotal": 21.4,
+      "id": "LrMfG3M"
+    },
+    {
+      "voucher_id": "INV-20241222-4010",
+      "customer_name": "Kyaw Thet Htwe",
+      "customer_email": "kyawthethtwe5502@gmail.com",
+      "sale_date": "2024-12-22",
+      "redirect_to_detail": true,
+      "all_correct": true,
+      "records": [
+        {
+          "id": 1734867918050,
+          "product": {
+            "product_name": "Custom Website Design",
+            "price": "20",
+            "created_at": "2024-12-09T05:31:15.620Z",
+            "id": "2"
+          },
+          "quantity": 1,
+          "cost": 20
+        }
+      ],
+      "total": 20,
+      "tax": 1.4000000000000001,
+      "netTotal": 21.4,
+      "id": "VqdEHkN"
+    },
+    {
+      "voucher_id": "INV-20241222-8257",
+      "customer_name": "kkjskfjdkjf",
+      "customer_email": "dddf@gmail.com",
+      "sale_date": "2024-12-22",
+      "redirect_to_detail": true,
+      "all_correct": true,
+      "records": [
+        {
+          "id": 1734868449976,
+          "product": {
+            "product_name": "Custom Website Design",
+            "price": "20",
+            "created_at": "2024-12-09T05:31:15.620Z",
+            "id": "2"
+          },
+          "quantity": 1,
+          "cost": 20
+        },
+        {
+          "id": 1734868453956,
+          "product": {
+            "product_name": "Custom Website Design",
+            "price": "30",
+            "created_at": "2024-12-22T11:44:32.025Z",
+            "id": "3"
+          },
+          "quantity": 1,
+          "cost": 30
+        }
+      ],
+      "total": 50,
+      "tax": 3.5000000000000004,
+      "netTotal": 53.5,
+      "id": "kkKTUZx"
+    },
+    {
+      "voucher_id": "INV-20241222-8611",
+      "customer_name": "kkjskfjdkjf",
+      "customer_email": "dddf@gmail.com",
+      "sale_date": "2024-12-22",
+      "redirect_to_detail": true,
+      "all_correct": true,
+      "records": [
+        {
+          "id": 1734868616305,
+          "product": {
+            "product_name": "Custom Website Design",
+            "price": "20",
+            "created_at": "2024-12-09T05:31:15.620Z",
+            "id": "2"
+          },
+          "quantity": 1,
+          "cost": 20
+        }
+      ],
+      "total": 20,
+      "tax": 1.4000000000000001,
+      "netTotal": 21.4,
+      "id": "ysGj0KR"
+    },
+    {
+      "voucher_id": "INV-20241222-5728",
+      "customer_name": "kkjskfjdkjf",
+      "customer_email": "dddf@gmail.com",
+      "sale_date": "2024-12-22",
+      "redirect_to_detail": true,
+      "all_correct": true,
+      "records": [
+        {
+          "id": 1734868782929,
+          "product": {
+            "product_name": "Custom Website Design",
+            "price": "20",
+            "created_at": "2024-12-09T05:31:15.620Z",
+            "id": "2"
+          },
+          "quantity": 1,
+          "cost": 20
+        }
+      ],
+      "total": 20,
+      "tax": 1.4000000000000001,
+      "netTotal": 21.4,
+      "id": "wSIZ7vD"
     }
   ]
 }

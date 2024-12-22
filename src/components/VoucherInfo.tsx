@@ -3,10 +3,12 @@ import SaleForm from "./SaleForm"
 import { Button } from "./ui/button"
 import { useRecordStore } from "@/store/useRecordStore"
 import VoucherTable from "./VoucherTable"
+import { useNavigate } from "react-router-dom"
 
 const VoucherInfo = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm()
     const { records, resetRecord } = useRecordStore()
+    const nav = useNavigate();
     const onSubmit = async (data: any) => {
 
         const total = records.reduce((pv, cv) => pv + cv.cost, 0);
@@ -22,6 +24,9 @@ const VoucherInfo = () => {
         })
         resetRecord()
         reset()
+        if(data.redirect_to_detail){
+            nav("/voucher")
+        }
     }
 
     function generateInvoiceNumber() {

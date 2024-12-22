@@ -75,7 +75,7 @@ const VoucherCard = () => {
         </TableHeader>
         <TableBody>
           {data?.records.map((record,index) => (
-            <TableRow>
+            <TableRow key={record.id}>
               <TableCell>{index + 1}</TableCell>
               <TableCell>{record.product.product_name}</TableCell>
               <TableCell>{record.product.price}</TableCell>
