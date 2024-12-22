@@ -14,7 +14,7 @@ const ProductEditCard = () => {
         await fetch(`http://localhost:5000/products/${id}`,{
             method: "PUT",
             headers: {
-                "Content-Type" : "applaiction/json"
+                "Content-Type" : "application/json"
             },
             body: JSON.stringify({
                 product_name: data.product_name,
