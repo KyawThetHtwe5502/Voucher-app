@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom"
 
 const RegisterPage = () => {
-  const {register, handleSubmit, formState:{errors},reset} = useForm()
+  const {register, handleSubmit,reset} = useForm()
   
   const navigate = useNavigate()
   const handleRegister = async (data:any) => {

@@ -11,6 +11,9 @@ import VoucherDetailPage from "./pages/VoucherDetailPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import UserProfilePage from "./pages/UserProfilePage";
+import UserProfileChangeImagePage from "./pages/UserProfileChangeImagePage";
+import UserProfileChangeNamePage from "./pages/UserProfileChangeNamePage";
+import UserProfileChangeEmailPage from "./pages/UserProfileChangeEmailPage";
 
 const router = createBrowserRouter([
     {
@@ -34,10 +37,6 @@ const router = createBrowserRouter([
                         element: <DashboardPage />
                     },
                     {
-                        path: 'user_profile',
-                        element: <UserProfilePage/>
-                    },
-                    {
                         path: 'product',
                         element: <ProductPage />
                     },
@@ -59,6 +58,27 @@ const router = createBrowserRouter([
                     {
                         path: 'voucher/detail/:id',
                         element: <VoucherDetailPage />
+                    },
+                    {
+                        path: 'user_profile',
+                        children: [
+                            {
+                                index: true,
+                                element: <UserProfilePage />
+
+                            },
+                            {
+                                path: 'user-change-name',
+                                element: <UserProfileChangeNamePage />
+                            },
+                            {
+                                path: 'user-change-image',
+                                element: <UserProfileChangeImagePage />
+                            }, {
+                                path: 'user-change-email',
+                                element: <UserProfileChangeEmailPage />
+                            }
+                        ]
                     }
                 ]
             }
