@@ -4,8 +4,10 @@ import {
     HiCircleStack,
     HiComputerDesktop,
     HiDocumentDuplicate,
+    HiUser,
 } from 'react-icons/hi2';
 const DashboardPage = () => {
+    
     return (
         <main>
             <Container >
@@ -20,7 +22,9 @@ const DashboardPage = () => {
                     <div className="col-span-1">
                         <ModuleBtn url={"/dashboard/voucher"} name="Voucher Module" icon={<HiDocumentDuplicate className="size-14" />} />
                     </div>
-
+                    <div className="col-span-1">
+                        <ModuleBtn url={"/dashboard/user_profile"} name="UserProfile Module" icon={<HiUser className="size-14" />} />
+                    </div>
                 </div>
             </Container>
         </main>
