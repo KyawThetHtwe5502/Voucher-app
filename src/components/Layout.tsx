@@ -7,18 +7,23 @@ import useUserStore from "@/store/useUserStore";
 
 const Layout = () => {
   const [token] = useCookie("my_token");
+  console.log(token)
   const [userCookie] = useCookie("user"); 
   const {user,setUser} = useUserStore() 
   useEffect(() => {
     setUser(JSON.parse(userCookie));
+   
   },[])
   if(!token){
-    <Navigate to="/"/>
+   return <Navigate to="/"/>
   }
   return (
-    <div className="p-5">
+    <div className="space-y-4">
         <Header/>
+        <div className="container mx-auto">
+
         <Outlet/>
+        </div>
     </div>
   )
 }

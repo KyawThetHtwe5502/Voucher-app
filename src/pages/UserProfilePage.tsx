@@ -1,8 +1,13 @@
+import { BreadcrumbComponent } from "@/components/BreadcrumbComponent"
+import UserProfileCard from "@/components/UserProfileCard"
 
 const UserProfilePage = () => {
   
   return (
-    <div>UserProfilePage</div>
+    <div>
+      <BreadcrumbComponent  name={"UserProfile Module"}  />
+      <UserProfileCard/>
+    </div>
   )
 }
 

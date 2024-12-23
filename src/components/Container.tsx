@@ -6,7 +6,7 @@ type props = {
 }
 const Container = ({children,className}:props) => {
   return (
-    <div className={`w-full md:w-[720px]  lg:w-[1000px] mx-auto ${className}`}>
+    <div className={`w-full  mx-auto ${className}`}>
         {children}
     </div>
   )

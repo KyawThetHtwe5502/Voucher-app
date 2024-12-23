@@ -23,7 +23,7 @@ export function BreadcrumbComponent({ name, links }: props) {
         <BreadcrumbItem>
           <BreadcrumbLink className="hover:text-blue-600 inline-flex items-center gap-2">
             <HiMiniHome />
-            <Link to="/">Home</Link>
+            <Link to="/dashboard">Home</Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
