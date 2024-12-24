@@ -12,6 +12,7 @@ const UserProfileChangeNamePage = () => {
   const {user,setUser} = useUserStore()
   console.log(user)
   const [userCookie,setUserCookie] = useCookie("user");
+
   const handleUpdateName= async (data:any) => {
     const res = await fetch("https://voucher-app-auth-api.ygnsh.com/api/v1/user-profile/change-name",{
       method: 'POST',
