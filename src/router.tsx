@@ -13,7 +13,7 @@ import RegisterPage from "./pages/RegisterPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import UserProfileChangeImagePage from "./pages/UserProfileChangeImagePage";
 import UserProfileChangeNamePage from "./pages/UserProfileChangeNamePage";
-import UserProfileChangeEmailPage from "./pages/UserProfileChangeEmailPage";
+import UserProfileChangePasswordPage from "./pages/UserProfileChangePasswordPage";
 
 const router = createBrowserRouter([
     {
@@ -75,8 +75,8 @@ const router = createBrowserRouter([
                                 path: 'user-change-image',
                                 element: <UserProfileChangeImagePage />
                             }, {
-                                path: 'user-change-email',
-                                element: <UserProfileChangeEmailPage />
+                                path: 'user-change-password',
+                                element: <UserProfileChangePasswordPage />
                             }
                         ]
                     }
