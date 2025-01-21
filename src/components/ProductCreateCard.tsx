@@ -6,7 +6,7 @@ const ProductCreateCard = () => {
     const {register, handleSubmit, formState: {errors}, reset} = useForm();
     const nav = useNavigate();
     const handleCreateProduct = async (data:any) => {
-        await fetch("http://localhost:5000/products", {
+        await fetch("https://voucher-app-api.ygnsh.com/api/v1/products", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -18,7 +18,7 @@ const ProductCreateCard = () => {
             })
         })
         if(data.back_to_product_list){
-            nav("/product")
+            nav("/dashboard/product")
         }
         reset()
     }
